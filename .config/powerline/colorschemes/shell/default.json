@@ -7,7 +7,7 @@
 		"virtualenv": { "fg": "white", "bg": "darkcyan" },
 		"branch": { "fg": "gray2", "bg": "brightred" },
 		"branch_dirty": { "fg": "gray2", "bg": "brightyellow" },
-		"branch_clean": { "fg": "gray9", "bg": "brightgreen" },
+		"branch_clean": { "fg": "white", "bg": "darkgreen" },
 		"cwd": { "fg": "gray9", "bg": "gray4" },
 		"cwd:current_folder": { "fg": "gray10", "bg": "gray4", "attr": ["bold"] },
 		"cwd:divider": { "fg": "gray7", "bg": "gray4" },
