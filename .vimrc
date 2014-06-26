@@ -7,12 +7,12 @@ endif
 
 set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline\ 10
 
-
 syntax on
 
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
-let $PYTHONPATH="/usr/lib/python3.3/site-packages"
+let $PYTHONPATH="/usr/lib/python3.4/site-packages"
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " {{{ Bundle Stuff
@@ -37,6 +37,7 @@ Bundle 'scrooloose/syntastic.git'
 Bundle 'ap/vim-css-color.git'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'tomasr/molokai.git'
+Bundle 'mileszs/ack.vim'
 " vim-scripts repos
 Bundle 'L9'
 "Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
@@ -83,6 +84,7 @@ set guioptions-=L  "remove left-hand scroll bar
 " window
 set scrolloff=15
 set showcmd
+" This keeps files open in the background aftre they have been exited
 set hidden
 set wildmenu
 set wildmode=list:longest
@@ -91,6 +93,13 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
+
+" We wish to match angle brackets
+set matchpairs+=<:> 
+
+" Maps :W in normal mode to write a file using sudo, this has some extra code
+" to automatically reload the file.
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " }}}
@@ -164,6 +173,10 @@ let g:DoxygenToolkit_classTag = "\\class "
 " {{{ ycm stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" Temporary
+let g:ycm_server_use_vim_stdout = 1
+let g:ycm_server_log_level = 'debug'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -194,9 +207,17 @@ map Q gq
 " sets the up key to be t
 noremap t k
 noremap T K
+noremap gt gk
+noremap gT gK
+noremap zt zk
+noremap zT zK
 " sets the down key to be n
 noremap n j
 noremap N J
+noremap gn gj
+noremap gN gJ
+noremap zn zj
+noremap zN zJ
 " sets the right key to be s
 noremap s l
 noremap S L
@@ -205,21 +226,29 @@ noremap l s
 noremap L S
 " set the next key to be k
 noremap k n
-noremap k N
+noremap K N
+noremap gk gn
+noremap gK gN
 " sets the find letter key to be j
 noremap j t
 noremap J T
+noremap gk gt
+noremap gK gT
 let g:NERDTreeMapOpenInTab="h"
 let g:NERDTreeMapOpenInTabSilent="H"
+
+" Makes yank more consitant with other vim commannds
+noremap Y y$
 
 " maps tab to match braket pairs
 nnoremap <tab> %
 vnoremap <tab> %
 
 nnoremap <leader>t :NERDTree<CR>
-
-" maps ; to : one less key to hit!
-nnoremap ; :
+nnoremap <leader>o :CommandT<CR>
+nnoremap <leader>c :YcmForceCompileAndDiagnostics<CR>
+nnoremap <leader>D :GoToDeclaration<CR>
+nnoremap <leader>d :GoToDefinitionElseDeclaration<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " }}}
