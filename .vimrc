@@ -198,45 +198,47 @@ au BufRead,BufNewFile *.as set filetype=actionscript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " {{{ Key mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sets Q to format text, this normally enter ex mode (visual mode)
-map Q gq
 " swapping the mappings for t and l to make things more ergonomic in Dvorak
 " the left key is already h
 "noremap h h
 "noremap H H
 " sets the up key to be t
-noremap t k
-noremap T K
-noremap gt gk
-noremap gT gK
-noremap zt zk
-noremap zT zK
-" sets the down key to be n
-noremap n j
-noremap N J
-noremap gn gj
-noremap gN gJ
-noremap zn zj
-noremap zN zJ
-" sets the right key to be s
-noremap s l
-noremap S L
-" sets the replace key to be l
-noremap l s
-noremap L S
-" set the next key to be k
-noremap k n
-noremap K N
-noremap gk gn
-noremap gK gN
-" sets the find letter key to be j
-noremap j t
-noremap J T
-noremap gk gt
-noremap gK gT
-let g:NERDTreeMapOpenInTab="h"
-let g:NERDTreeMapOpenInTabSilent="H"
+"noremap t k
+"noremap T K
+"noremap gt gk
+"noremap gT gK
+"noremap zt zk
+"noremap zT zK
+"" sets the down key to be n
+"noremap n j
+"noremap N J
+"noremap gn gj
+"noremap gN gJ
+"noremap zn zj
+"noremap zN zJ
+"" sets the right key to be s
+"noremap s l
+"noremap S L
+"" sets the replace key to be l
+"noremap l s
+"noremap L S
+"" set the next key to be k
+"noremap k n
+"noremap K N
+"noremap gk gn
+"noremap gK gN
+"" sets the find letter key to be j
+"noremap j t
+"noremap J T
+"noremap gk gt
+"noremap gK gT
+"let g:NERDTreeMapOpenInTab="h"
+"let g:NERDTreeMapOpenInTabSilent="H"
 
+set langmap=tk,TK,nj,NJ,sl,SL,ls,LS,kn,KN,jt,JT
+
+" Sets Q to format text, this normally enter ex mode (visual mode)
+map Q gq
 " Makes yank more consitant with other vim commannds
 noremap Y y$
 
@@ -244,7 +246,7 @@ noremap Y y$
 nnoremap <tab> %
 vnoremap <tab> %
 
-nnoremap <leader>t :NERDTree<CR>
+nnoremap <leader>k :NERDTree<CR>
 nnoremap <leader>o :CommandT<CR>
 nnoremap <leader>c :YcmForceCompileAndDiagnostics<CR>
 nnoremap <leader>D :GoToDeclaration<CR>
