@@ -18,7 +18,7 @@ let $PYTHONPATH="/usr/lib/python3.4/site-packages"
 " {{{ Bundle Stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 " let Vundle manage Vundle
