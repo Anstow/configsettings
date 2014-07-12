@@ -46,6 +46,7 @@ Bundle 'taglist.vim'
 Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
+call vundle#end()
 filetype plugin indent on     " required!
 "
 " Brief help
