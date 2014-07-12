@@ -19,7 +19,7 @@ let $PYTHONPATH="/usr/lib/python3.4/site-packages"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
