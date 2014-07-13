@@ -15,7 +15,7 @@ let $PYTHONPATH="/usr/lib/python3.4/site-packages"
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" {{{ Bundle Stuff
+" {{{ Plugin Stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set rtp+=~/.vim/bundle/Vundle.vim/
@@ -23,40 +23,42 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
-" My Bundles here:
+" My Plugins here:
 "
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
-Bundle 'vim-scripts/DoxygenToolkit.vim.git'
-Bundle 'Valloric/YouCompleteMe.git'
-Bundle 'scrooloose/syntastic.git'
-Bundle 'ap/vim-css-color.git'
-Bundle 'scrooloose/nerdtree.git'
-Bundle 'tomasr/molokai.git'
-Bundle 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'tpope/vim-rails.git'
+Plugin 'vim-scripts/DoxygenToolkit.vim.git'
+Plugin 'Valloric/YouCompleteMe.git'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'ap/vim-css-color.git'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'tomasr/molokai.git'
+Plugin 'mileszs/ack.vim'
 " vim-scripts repos
-Bundle 'L9'
-"Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
-Bundle 'taglist.vim'
+Plugin 'L9'
+"Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
+Plugin 'taglist.vim'
 " non github repos
-Bundle 'git://git.wincent.com/command-t.git'
+Plugin 'git://git.wincent.com/command-t.git'
 " ...
 
 call vundle#end()
 filetype plugin indent on     " required!
-"
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install(update) bundles
+" :PluginSearch(!) foo - search(or refresh cache first) for foo
+" :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" Put your non-Plugin stuff after this line
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " }}}
