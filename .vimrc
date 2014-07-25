@@ -29,6 +29,7 @@ Plugin 'gmarik/Vundle.vim'
 "
 " original repos on github
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'tpope/vim-rails.git'
 Plugin 'vim-scripts/DoxygenToolkit.vim.git'
@@ -244,6 +245,10 @@ set langmap=tk,TK,nj,NJ,sl,SL,ls,LS,kn,KN,jt,JT
 map Q gq
 " Makes yank more consitant with other vim commannds
 noremap Y y$
+
+" Preserve highlighting in visual mode when indenting
+vnoremap > >gv
+vnoremap < <gv
 
 " maps tab to match braket pairs
 nnoremap <tab> %
