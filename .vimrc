@@ -5,9 +5,11 @@ if has('mouse')
 	set mouse=a
 endif
 
-set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline\ 10
-
-syntax on
+if has("gui_running")
+	set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline\ 10
+else
+	set t_Co=256
+endif
 
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
@@ -28,17 +30,19 @@ Plugin 'gmarik/Vundle.vim'
 " My Plugins here:
 "
 " original repos on github
+Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'SirVer/ultisnips'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'tpope/vim-rails.git'
 Plugin 'vim-scripts/DoxygenToolkit.vim.git'
-Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'ap/vim-css-color.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'tomasr/molokai.git'
-Plugin 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim.git'
+"Plugin 'vim-latex/vim-latex.git'
 " vim-scripts repos
 Plugin 'L9'
 "Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
@@ -51,6 +55,8 @@ call vundle#end()
 filetype plugin indent on     " required!
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
+
+syntax enable
 
 " Brief help
 " :PluginList          - list configured bundles
@@ -88,7 +94,7 @@ set guioptions-=L  "remove left-hand scroll bar
 " window
 set scrolloff=15
 set showcmd
-" This keeps files open in the background aftre they have been exited
+" This keeps files open in the background after they have been exited
 set hidden
 set wildmenu
 set wildmode=list:longest
@@ -239,6 +245,7 @@ au BufRead,BufNewFile *.as set filetype=actionscript
 "let g:NERDTreeMapOpenInTab="h"
 "let g:NERDTreeMapOpenInTabSilent="H"
 
+set langnoremap
 set langmap=tk,TK,nj,NJ,sl,SL,ls,LS,kn,KN,jt,JT
 
 " Sets Q to format text, this normally enter ex mode (visual mode)
@@ -253,6 +260,9 @@ vnoremap < <gv
 " maps tab to match braket pairs
 nnoremap <tab> %
 vnoremap <tab> %
+nnoremap y<tab> y%
+nnoremap d<tab> d%
+nnoremap c<tab> c%
 
 nnoremap <leader>k :NERDTree<CR>
 nnoremap <leader>o :CommandT<CR>
@@ -268,20 +278,21 @@ nnoremap <leader>d :GoToDefinitionElseDeclaration<CR>
 " {{{ LaTeX stuff 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-filetype plugin on
+"filetype plugin on
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
-" search in a singe file. This will confuse Latex-Suite. Set your grep
+" search in a single file. This will confuse Latex-Suite. Set your grep
 " program to always generate a file-name.
-set grepprg=grep\ -nH\ $*
+"set grepprg=grep\ -nH\ $*
 
 " OPTIONAL: This enables automatic indentation as you type.
-filetype indent on
+"filetype indent on
 
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
+"let g:tex_flavor='latex'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " }}} End of LaTeX stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
