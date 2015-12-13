@@ -245,7 +245,9 @@ au BufRead,BufNewFile *.as set filetype=actionscript
 "let g:NERDTreeMapOpenInTab="h"
 "let g:NERDTreeMapOpenInTabSilent="H"
 
-set langnoremap
+if (v:version > 704 || v:version == 704 && has('patch502'))
+	set langnoremap
+endif
 set langmap=tk,TK,nj,NJ,sl,SL,ls,LS,kn,KN,jt,JT
 
 " Sets Q to format text, this normally enter ex mode (visual mode)
