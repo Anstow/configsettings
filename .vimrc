@@ -6,7 +6,7 @@ if has('mouse')
 endif
 
 if has("gui_running")
-	set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline\ 10
+	set guifont=Hack\ 10
 else
 	set t_Co=256
 endif
@@ -147,7 +147,7 @@ function! NumberToggle()
   endif
 endfunc
 
-nnoremap <C-n> :call NumberToggle()<cr>
+nnoremap <c-n> :call NumberToggle()<cr>
 
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertEnter * :set number
@@ -183,10 +183,22 @@ let g:DoxygenToolkit_classTag = "\\class "
 " {{{ ycm stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_complete_in_comments = 1
+let g:ycm_seed_identifiers_with_syntax = 1
 
-" Temporary
-let g:ycm_server_use_vim_stdout = 1
-let g:ycm_server_log_level = 'debug'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{ ultisnips setup stuff
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<c-s>"
+let g:UltiSnipsJumpForwardTrigger="<c-s>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+
+let g:UltiSnipsEditSnippet="horizontal"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
