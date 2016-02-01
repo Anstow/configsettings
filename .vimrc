@@ -257,7 +257,7 @@ au BufRead,BufNewFile *.as set filetype=actionscript
 "let g:NERDTreeMapOpenInTab="h"
 "let g:NERDTreeMapOpenInTabSilent="H"
 
-if (v:version > 704 || v:version == 704 && has('patch502'))
+if (exists("&langnoremap"))
 	set langnoremap
 endif
 set langmap=tk,TK,nj,NJ,sl,SL,ls,LS,kn,KN,jt,JT
