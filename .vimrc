@@ -42,6 +42,8 @@ Plugin 'ap/vim-css-color.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'tomasr/molokai.git'
 Plugin 'mileszs/ack.vim.git'
+" Latex plugins
+Plugin 'gi1242/vim-tex-syntax'
 "Plugin 'vim-latex/vim-latex.git'
 " vim-scripts repos
 Plugin 'L9'
