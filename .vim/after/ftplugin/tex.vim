@@ -40,6 +40,7 @@ inoremap `b \beta
 inoremap `g \gamma
 inoremap `G \Gamma
 inoremap `d \delta
+inoremap `D \Delta
 inoremap `e \epsilon
 inoremap `z \zeta
 " Note langmap cause the j key to work like n
