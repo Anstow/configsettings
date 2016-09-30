@@ -13,7 +13,7 @@ endif
 
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
-let $PYTHONPATH="/usr/lib/python3.4/site-packages"
+"let $PYTHONPATH="/usr/lib/python3.4/site-packages"
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -137,7 +137,7 @@ match ExtraWhitespace /\s\+\%#\@<!$/
 
 " Maps :SudoWrite in normal mode to write a file using sudo, this has some extra code
 " to automatically reload the file.
-command SudoWrite :execute ':silent w !sudo tee % > /dev/null' | :edit!
+"command SudoWrite :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 " Maps :DiffSaved to call make a diff with the saved version of the current
 " file.
