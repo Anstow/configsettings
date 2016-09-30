@@ -1,0 +1,15 @@
+#!/bin/bash
+
+FILE=$1
+
+if [ -z "$FILE" ]; then
+	echo "Requires filename"
+	exit 1
+fi
+
+if [ -z "$(grep -xl '\\begin{document}' "$FILE")" ]; then
+	echo "$FILE isn't a latex document"
+	exit 1
+fi
+
+latexmk -pdf $FILE
