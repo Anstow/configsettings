@@ -21,6 +21,8 @@ setlocal ts=2
 setlocal linebreak
 
 setlocal spell
+setlocal spelllang=en_gb
+setlocal spellfile=$HOME/.vim/spell/maths.utf-8.add
 
 " Only set spell syntax to toplevel if there isn't a begin document line
 if (search('\\begin{document}', 'nw') == 0)
