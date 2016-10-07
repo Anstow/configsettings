@@ -81,6 +81,11 @@ syntax enable
 " clipboard
 set clipboard=unnamed
 
+" Disable bell when I type something that is technically not allowed.
+set visualbell
+set t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
 set tabstop=4
 set sw=4
 set background=dark
@@ -263,7 +268,9 @@ au BufRead,BufNewFile *.as set filetype=actionscript
 "let g:NERDTreeMapOpenInTab="h"
 "let g:NERDTreeMapOpenInTabSilent="H"
 
-if (exists("&langnoremap"))
+if (exists('+langremap'))
+	set nolangremap
+elseif (exists("+langnoremap"))
 	set langnoremap
 endif
 set langmap=tk,TK,nj,NJ,sl,SL,ls,LS,kn,KN,jt,JT
