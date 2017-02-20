@@ -48,7 +48,7 @@ Plugin 'gi1242/vim-tex-syntax'
 " vim-scripts repos
 Plugin 'L9'
 "Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
-Plugin 'taglist.vim'
+"Plugin 'taglist.vim'
 " non github repos
 Plugin 'git://git.wincent.com/command-t.git'
 " ...
