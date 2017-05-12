@@ -37,7 +37,7 @@ Plugin 'tpope/vim-surround.git'
 Plugin 'tpope/vim-abolish.git'
 Plugin 'SirVer/ultisnips.git'
 Plugin 'vim-scripts/DoxygenToolkit.vim.git'
-Plugin 'scrooloose/syntastic.git'
+"Plugin 'scrooloose/syntastic.git'
 Plugin 'ap/vim-css-color.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'tomasr/molokai.git'
@@ -52,7 +52,7 @@ Plugin 'gi1242/vim-tex-syntax'
 "Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
 "Plugin 'taglist.vim'
 " non github repos
-Plugin 'git://git.wincent.com/command-t.git'
+"Plugin 'git://git.wincent.com/command-t.git'
 " ...
 
 call vundle#end()
