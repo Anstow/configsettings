@@ -24,7 +24,7 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Plugin 'gmarik/Vundle.vim'
 
 " My Plugins here:
@@ -42,6 +42,7 @@ Plugin 'ap/vim-css-color.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'tomasr/molokai.git'
 Plugin 'mileszs/ack.vim.git'
+Plugin 'rhysd/vim-grammarous'
 " Latex plugins
 Plugin 'gi1242/vim-tex-syntax'
 "Plugin 'vim-latex/vim-latex.git'
