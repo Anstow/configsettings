@@ -113,15 +113,34 @@ set backspace=indent,eol,start
 set laststatus=2
 
 " We wish to match angle brackets
-set matchpairs+=<:> 
-
-" Maps :W in normal mode to write a file using sudo, this has some extra code
-" to automatically reload the file.
-command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+set matchpairs+=<:>
 
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+\%#\@<!$/
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{ Custom commands
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Maps :SudoWrite in normal mode to write a file using sudo, this has some extra code
+" to automatically reload the file.
+command SudoWrite :execute ':silent w !sudo tee % > /dev/null' | :edit!
+
+" Maps :DiffSaved to call make a diff with the saved version of the current
+" file.
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " }}}
@@ -167,7 +186,7 @@ autocmd InsertLeave * :set nonumber
 autocmd InsertLeave * :set relativenumber
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" }}} 
+" }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -190,6 +209,17 @@ let g:DoxygenToolkit_classTag = "\\class "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" {{{ Ack stuff
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ackhighlight = 1
+let g:ack_mappings = { "o": "<CR>" }
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " {{{ ycm stuff
@@ -219,12 +249,14 @@ let g:UltiSnipsEditSnippet="horizontal"
 " {{{ File type stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Cmake indenting and syntax highlighting
-autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! indent/cmake.vim 
+autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! indent/cmake.vim
 autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
 autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
 
 " Sets the file type for .as to action script.
-au BufRead,BufNewFile *.as set filetype=actionscript 
+au BufRead,BufNewFile *.as set filetype=actionscript
+" Sets the file type for .xpp to a cpp file
+au BufRead,BufNewFile *.xpp set filetype=cpp
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -237,44 +269,74 @@ au BufRead,BufNewFile *.as set filetype=actionscript
 "noremap h h
 "noremap H H
 " sets the up key to be t
-"noremap t k
-"noremap T K
+noremap t k
+noremap T K
 "noremap gt gk
 "noremap gT gK
-"noremap zt zk
-"noremap zT zK
-"" sets the down key to be n
-"noremap n j
-"noremap N J
+noremap zt zk
+noremap zT zK
+"noremap dt dk
+"noremap dT dK
+"noremap ct ck
+"noremap cT cK
+"noremap yt yk
+"noremap yT yK
+"noremap <t <k
+"noremap <T <K
+"noremap >t >k
+"noremap >T >K
+" sets the down key to be n
+noremap n j
+noremap N J
 "noremap gn gj
 "noremap gN gJ
-"noremap zn zj
-"noremap zN zJ
-"" sets the right key to be s
-"noremap s l
-"noremap S L
-"" sets the replace key to be l
-"noremap l s
-"noremap L S
-"" set the next key to be k
-"noremap k n
-"noremap K N
+noremap zn zj
+noremap zN zJ
+"noremap dn dj
+"noremap dN dJ
+"noremap cn cj
+"noremap cN cJ
+"noremap yn yj
+"noremap yN yJ
+"noremap <n <j
+"noremap <N <J
+"noremap >n >j
+"noremap >N >J
+" sets the right key to be s
+noremap s l
+noremap S L
+"noremap ds dl
+"noremap dS dL
+"noremap cs cl
+"noremap cS cL
+"noremap ys yl
+"noremap yS yL
+"noremap <s <l
+"noremap <S <L
+"noremap >s >l
+"noremap >S >L
+" sets the replace key to be l
+noremap l s
+noremap L S
+" set the next key to be k
+noremap k n
+noremap K N
 "noremap gk gn
 "noremap gK gN
-"" sets the find letter key to be j
-"noremap j t
-"noremap J T
+" sets the find letter key to be j
+noremap j t
+noremap J T
 "noremap gk gt
 "noremap gK gT
-"let g:NERDTreeMapOpenInTab="h"
-"let g:NERDTreeMapOpenInTabSilent="H"
+let g:NERDTreeMapOpenInTab="h"
+let g:NERDTreeMapOpenInTabSilent="H"
 
-if (exists('+langremap'))
-	set nolangremap
-elseif (exists("+langnoremap"))
-	set langnoremap
-endif
-set langmap=tk,TK,nj,NJ,sl,SL,ls,LS,kn,KN,jt,JT
+"if (exists('+langremap'))
+"	set nolangremap
+"elseif (exists("+langnoremap"))
+"	set langnoremap
+"endif
+"set langmap=tk,TK,nj,NJ,sl,SL,ls,LS,kn,KN,jt,JT
 
 " Sets Q to format text, this normally enter ex mode (visual mode)
 map Q gq
@@ -292,8 +354,8 @@ nnoremap y<tab> y%
 nnoremap d<tab> d%
 nnoremap c<tab> c%
 
-nnoremap <leader>k :NERDTree<CR>
-nnoremap <leader>o :CommandT<CR>
+nnoremap <leader>o :NERDTree<CR>
+nnoremap <leader>t :CommandT<CR>
 nnoremap <leader>c :YcmForceCompileAndDiagnostics<CR>
 nnoremap <leader>D :GoToDeclaration<CR>
 nnoremap <leader>d :GoToDefinitionElseDeclaration<CR>
