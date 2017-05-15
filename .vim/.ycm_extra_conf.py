@@ -48,7 +48,7 @@ flags = [
 '-isystem',
 '/usr/local/include',
 '-isystem',
-'/usr/lib/clang/3.9.1/include',
+'/usr/lib/clang/4.0.0/include',
 '-isystem',
 '/usr/include',
 ]
