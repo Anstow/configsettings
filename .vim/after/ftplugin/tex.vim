@@ -46,38 +46,38 @@ inoremap `D \Delta
 inoremap `e \epsilon
 inoremap `z \zeta
 " Note langmap cause the j key to work like n
-inoremap `j \eta
+inoremap `n \eta
 " Note langmap cause the k key to work like t
-inoremap `kh \theta
+inoremap `th \theta
 " Note langmap cause the K key to work like T
 inoremap `Kh \Theta
 inoremap `i \iota
 " Note langmap causes the n key to work like k
-inoremap `n \kappa
+inoremap `k \kappa
 " Note langmap causes the s key to work like l
-inoremap `s \lambda
+inoremap `l \lambda
 " Note langmap causes the S key to work like L
-inoremap `S \Lambda
+inoremap `L \Lambda
 inoremap `m \mu
 inoremap `v \nu
 " Note langmap causes the n key to work like k and l key to work like s
-inoremap `nl \xi
+inoremap `ks \xi
 inoremap `p \pi
 inoremap `P \pi
 inoremap `r \rho
 " Note langmap causes the l key to work like s
-inoremap `l \sigma
+inoremap `s \sigma
 " Note langmap causes the L key to work like S
-inoremap `L \Sigma
+inoremap `S \Sigma
 " Note langmap cause the k key to work like t
-inoremap `k \tau
+inoremap `t \tau
 inoremap `u \upsilon
 inoremap `f \phi
 inoremap `F \Phi
 inoremap `x \chi
 " Note langmap causes the l key to work like s
-inoremap `pl \psi
+inoremap `ps \psi
 " Note langmap causes the l key to work like s
-inoremap `Pl \Psi
+inoremap `Ps \Psi
 inoremap `w \omega
 inoremap `W \Omega
