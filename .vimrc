@@ -31,18 +31,16 @@ Plugin 'gmarik/Vundle.vim'
 "
 " original repos on github
 Plugin 'Valloric/YouCompleteMe.git'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'SirVer/ultisnips'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-fugitive.git'
+Plugin 'tpope/vim-surround.git'
+Plugin 'SirVer/ultisnips.git'
 Plugin 'vim-scripts/DoxygenToolkit.vim.git'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'ap/vim-css-color.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'tomasr/molokai.git'
 Plugin 'mileszs/ack.vim.git'
-Plugin 'rhysd/vim-grammarous'
+Plugin 'rhysd/vim-grammarous.git'
 " Latex plugins
 Plugin 'gi1242/vim-tex-syntax'
 "Plugin 'vim-latex/vim-latex.git'
@@ -269,39 +267,39 @@ au BufRead,BufNewFile *.xpp set filetype=cpp
 "noremap h h
 "noremap H H
 " sets the up key to be t
-noremap t k
-noremap T K
-"noremap gt gk
-"noremap gT gK
-noremap zt zk
-noremap zT zK
-"noremap dt dk
-"noremap dT dK
-"noremap ct ck
-"noremap cT cK
-"noremap yt yk
-"noremap yT yK
-"noremap <t <k
-"noremap <T <K
-"noremap >t >k
-"noremap >T >K
+noremap n k
+noremap N K
+"noremap gn gk
+"noremap gN gK
+noremap zn zk
+noremap zN zK
+"noremap dn dk
+"noremap dN dK
+"noremap cn ck
+"noremap cN cK
+"noremap yn yk
+"noremap yN yK
+"noremap <n <k
+"noremap <N <K
+"noremap >n >k
+"noremap >N >K
 " sets the down key to be n
-noremap n j
-noremap N J
-"noremap gn gj
-"noremap gN gJ
-noremap zn zj
-noremap zN zJ
-"noremap dn dj
-"noremap dN dJ
-"noremap cn cj
-"noremap cN cJ
-"noremap yn yj
-"noremap yN yJ
-"noremap <n <j
-"noremap <N <J
-"noremap >n >j
-"noremap >N >J
+noremap t j
+noremap T J
+"noremap gt gj
+"noremap gT gJ
+noremap zt zj
+noremap zT zJ
+"noremap dt dj
+"noremap dT dJ
+"noremap ct cj
+"noremap cT cJ
+"noremap yt yj
+"noremap yT yJ
+"noremap <t <j
+"noremap <T <J
+"noremap >t >j
+"noremap >T >J
 " sets the right key to be s
 noremap s l
 noremap S L
@@ -353,6 +351,16 @@ vnoremap <tab> %
 nnoremap y<tab> y%
 nnoremap d<tab> d%
 nnoremap c<tab> c%
+
+" map ; to execute a command
+nnoremap ; :
+vnoremap ; :
+" map : to repeat reverse find char
+nnoremap : ,
+vnoremap : ,
+" map , to repeat forward find char
+nnoremap , ;
+vnoremap , ;
 
 nnoremap <leader>o :NERDTree<CR>
 nnoremap <leader>t :CommandT<CR>
