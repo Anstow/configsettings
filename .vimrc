@@ -269,8 +269,8 @@ au BufRead,BufNewFile *.xpp set filetype=cpp
 " sets the up key to be t
 noremap n k
 noremap N K
-"noremap gn gk
-"noremap gN gK
+noremap gn gk
+noremap gN gK
 noremap zn zk
 noremap zN zK
 "noremap dn dk
@@ -286,8 +286,8 @@ noremap zN zK
 " sets the down key to be n
 noremap t j
 noremap T J
-"noremap gt gj
-"noremap gT gJ
+noremap gt gj
+noremap gT gJ
 noremap zt zj
 noremap zT zJ
 "noremap dt dj
