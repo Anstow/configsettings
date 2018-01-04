@@ -1,5 +1,25 @@
-snippet \begin "Begin environment"
+snippet begin "Begin environment"
 \\begin\{${1:equation*}\}
-	${0:${VISUAL:% contents}}
-\\end\{$1\}
+	${2:${VISUAL:% contents}}
+\\end\{$1\}$0
+endsnippet
+
+snippet langle "Angle Brackets" i
+\left\langle $1 \right\rangle$0
+endsnippet
+
+snippet bsum "Bounded sum" i
+\sum_{${1:i}=${2:0}}^{${3:p-1}} $0
+endsnippet
+
+snippet mf "mathfrak" i
+\mathfrak{$1}$0
+endsnippet
+
+snippet ( "Bracket pair" i
+\left($1\right)$0
+endsnippet
+
+snippet \{ "Brace pair" i
+\left\{$1\right\}$0
 endsnippet

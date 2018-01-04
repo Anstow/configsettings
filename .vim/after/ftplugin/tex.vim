@@ -36,6 +36,12 @@ nnoremap <leader>c :call CompileLatex()<CR>
 nnoremap <leader>v :call ViewPdf()<CR>
 
 " Insert mode maps
+
+inoremap `< \langle
+inoremap `> \rangle
+inoremap `- \overline
+inoremap `c \centre
+
 " Greek letter maps
 inoremap `a \alpha
 inoremap `b \beta
