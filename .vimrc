@@ -104,7 +104,11 @@ set showcmd
 set hidden
 set wildmenu
 set wildmode=list:longest
-set cursorline
+" cursorline has priority over spelling mistakes meaning that I miss them when
+" typing in commandline mode.
+if has("gui_running")
+	set cursorline
+endif
 set ttyfast
 set ruler
 set backspace=indent,eol,start
