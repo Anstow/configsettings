@@ -41,6 +41,7 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'tomasr/molokai.git'
 Plugin 'mileszs/ack.vim.git'
 Plugin 'rhysd/vim-grammarous.git'
+Plugin 'godlygeek/tabular.git'
 " Latex plugins
 Plugin 'gi1242/vim-tex-syntax'
 "Plugin 'vim-latex/vim-latex.git'
@@ -81,9 +82,7 @@ syntax enable
 set clipboard=unnamed
 
 " Disable bell when I type something that is technically not allowed.
-set visualbell
-set t_vb=
-autocmd GUIEnter * set visualbell t_vb=
+autocmd VimEnter * set visualbell t_vb=
 
 set tabstop=4
 set sw=4
@@ -113,6 +112,10 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
+set formatoptions+=j
+
+set listchars=tab:>-,trail:·
+set list
 
 " We wish to match angle brackets
 set matchpairs+=<:>
@@ -212,16 +215,14 @@ let g:DoxygenToolkit_classTag = "\\class "
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " {{{ Ack stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ackhighlight = 1
-let g:ack_mappings = { "o": "<CR>" }
+autocmd VimEnter * let g:ack_mappings = { "o": "<CR>" }
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " }}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " {{{ ycm stuff
@@ -369,6 +370,7 @@ vnoremap , ;
 nnoremap <leader>o :NERDTree<CR>
 nnoremap <leader>t :CommandT<CR>
 nnoremap <leader>c :YcmForceCompileAndDiagnostics<CR>
+nnoremap <leader>f :YcmCompleter FixIt<CR>
 nnoremap <leader>D :GoToDeclaration<CR>
 nnoremap <leader>d :GoToDefinitionElseDeclaration<CR>
 
