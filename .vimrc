@@ -109,6 +109,7 @@ if has("gui_running")
 	set cursorline
 endif
 set ttyfast
+set lazyredraw
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
