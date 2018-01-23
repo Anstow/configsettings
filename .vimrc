@@ -31,8 +31,10 @@ Plugin 'gmarik/Vundle.vim'
 "
 " original repos on github
 Plugin 'Valloric/YouCompleteMe.git'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-surround.git'
+Plugin 'tpope/vim-abolish.git'
 Plugin 'SirVer/ultisnips.git'
 Plugin 'vim-scripts/DoxygenToolkit.vim.git'
 Plugin 'scrooloose/syntastic.git'
@@ -46,7 +48,7 @@ Plugin 'godlygeek/tabular.git'
 Plugin 'gi1242/vim-tex-syntax'
 "Plugin 'vim-latex/vim-latex.git'
 " vim-scripts repos
-Plugin 'L9'
+"Plugin 'L9'
 "Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
 "Plugin 'taglist.vim'
 " non github repos
