@@ -1,0 +1,48 @@
+noremap n k
+noremap N K
+noremap gn gk
+noremap gN gK
+noremap zn zk
+noremap zN zK
+
+noremap t j
+noremap T J
+noremap gt gj
+noremap gT gJ
+noremap zt zj
+noremap zT zJ
+
+noremap s l
+noremap S L
+
+noremap l s
+noremap L S
+
+noremap k n
+noremap K N
+
+noremap j t
+noremap J T
+
+" Sets Q to format text, this normally enter ex mode (visual mode)
+map Q gq
+" Makes yank more consitant with other vim commannds
+noremap Y y$
+
+" maps tab to match braket pairs
+nnoremap <tab> %
+vnoremap <tab> %
+nnoremap y<tab> y%
+nnoremap d<tab> d%
+nnoremap c<tab> c%
+
+" map ; to execute a command
+nnoremap ; :
+vnoremap ; :
+" map : to repeat reverse find char
+nnoremap : ,
+vnoremap : ,
+" map , to repeat forward find char
+nnoremap , ;
+vnoremap , ;
+" vim: ft=vim
