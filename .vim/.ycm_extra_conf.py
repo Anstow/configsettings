@@ -56,17 +56,21 @@ flags = [
 '-x',
 'c++',
 '-std=c++17',
+'-stdlib=libc++',
+'-fcoroutines-ts',
 '-isystem',
 get_python_inc(),
 '-I',
 '.',
 '-isystem',
-'/usr/include/c++/8.2.0',
-'-isystem',
 '/usr/local/include',
 '-isystem',
+<<<<<<< Updated upstream
 '/usr/lib/clang/6.0.1/include',
 
+=======
+'/usr/lib/clang/7.0.1/include',
+>>>>>>> Stashed changes
 '-isystem',
 '/usr/include',
 ]
