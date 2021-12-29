@@ -65,12 +65,7 @@ get_python_inc(),
 '-isystem',
 '/usr/local/include',
 '-isystem',
-<<<<<<< Updated upstream
-'/usr/lib/clang/6.0.1/include',
-
-=======
 '/usr/lib/clang/7.0.1/include',
->>>>>>> Stashed changes
 '-isystem',
 '/usr/include',
 ]
